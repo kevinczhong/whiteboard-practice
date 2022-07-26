@@ -1,0 +1,40 @@
+Write a function that takes in a sorted array of words and uses binary search to find the index of the word “hello” in the array.
+
+input = ["apple", "bees", "covid", "hello", "hotel", "zebra"]
+output = 3
+
+covid < hello is true
+
+smallest problem: how to compare two different strings
+
+hash = {a: 1, b: 2....}
+
+if hash[letter] < hash[letter2]
+
+
+
+
+
+def binsearch(array, target)
+  letter_values = {a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10, k: 11, l: 12, m: 13, n: 14, o: 15, p: 16, q: 17, r: 18, s: 19, t: 20, u: 21, v: 22, w: 23, x: 24, y: 25, z: 26}
+  start = 0
+  end = array.length - 1
+  while start < end
+    mid = start + end / 2
+    if array[mid] == target
+      return mid
+    elsif array[mid][0] > target[0]
+      end = mid
+    elsif array[mid][0] < target[0]
+      start = mid
+    end
+  end
+  if array[start] == target
+    return start
+  end
+  if array[end] == target
+    return end
+  end
+  return -1
+end
+  

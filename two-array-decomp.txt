@@ -1,0 +1,11 @@
+1. Def function, expected input two arrays of integers. Create empty results array.
+
+Approach 1: Loop through first array, storing all values into a hash. Loop through second array, checking if every value in second array can be found in hash; if so, take value and store value in question in results array. Return results array. 
+
+Problems: unsure about how to call hash values. Can vaguely explain solution conceptually, probably cannot implement.
+
+Approach 2: Loop through the first array, and nest a loop iterating over the second array inside the first loop, wherein each number of the second array is checked against the present value in the first array and pushed to the results array if equal to the first value. 
+
+Benefits: Feel confident in implementing.
+
+Problems: Worst case O(n) is n^2, definitely inefficient. 
