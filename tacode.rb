@@ -95,63 +95,96 @@ require "faker"
 
 # p employees
 
-class Employee
-  attr_reader :first_name, :last_name, :active
-  attr_writer :active
+# class Employee
+#   attr_reader :first_name, :last_name, :active
+#   attr_writer :active
 
-  def initialize(input_options)
-    @first_name = input_options[:first_name]
-    @last_name = input_options[:last_name]
-    @salary = input_options[:salary]
-    @active = input_options[:active]
-  end
+#   def initialize(input_options)
+#     @first_name = input_options[:first_name]
+#     @last_name = input_options[:last_name]
+#     @salary = input_options[:salary]
+#     @active = input_options[:active]
+#   end
 
-  def print_info
-    p "#{@first_name} #{@last_name} makes #{@salary} a year."
-  end
+#   def print_info
+#     p "#{@first_name} #{@last_name} makes #{@salary} a year."
+#   end
 
-  def give_annual_raise
-    @salary = 1.05 * @salary
-  end
+#   def give_annual_raise
+#     @salary = 1.05 * @salary
+#   end
 
-  def print_salary
-    @salary
-  end
-end
+#   def print_salary
+#     @salary
+#   end
+# end
 
-employee1 = Employee.new({ first_name: "Majora", last_name: "Carter", salary: 80000, active: true })
-employee2 = Employee.new(first_name: "Danilo", last_name: "Campos", salary: 70000, active: true)
-employee1.print_info
-employee2.print_info
+# employee1 = Employee.new({ first_name: "Majora", last_name: "Carter", salary: 80000, active: true })
+# employee2 = Employee.new(first_name: "Danilo", last_name: "Campos", salary: 70000, active: true)
+# employee1.print_info
+# employee2.print_info
 
-class Manager < Employee
-  def initialize(input_options)
-    super
-    @employees = input_options[:employees]
-  end
+# class Manager < Employee
+#   def initialize(input_options)
+#     super
+#     @employees = input_options[:employees]
+#   end
 
-  def employees
-    @employees
-  end
+#   def employees
+#     @employees
+#   end
 
-  def give_all_raises
-    for employee in employees
-      employee.give_annual_raise
-      p employee.print_salary
-    end
-  end
+#   def give_all_raises
+#     for employee in employees
+#       employee.give_annual_raise
+#       p employee.print_salary
+#     end
+#   end
 
-  def send_report
-    puts "Sending email..."
-    # use email sending library...
-    puts "Email sent!"
-  end
-end
+#   def send_report
+#     puts "Sending email..."
+#     # use email sending library...
+#     puts "Email sent!"
+#   end
+# end
 
-manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
+# manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
 # manager.print_info
 # manager.send_report
 # employee1.give_annual_raise
 # employee1.print_salary
-manager.give_all_raises
-p manager.employees[0].print_salary
+# manager.give_all_raises
+# p manager.employees[0].print_salary
+
+# numbers = [
+#   [1, 2, 3],
+#   [2, 2, 2],
+#   [3, 2, 1],
+# ]
+
+# lines = []
+# for array in numbers
+#   row = ""
+#   for num in array
+#     row += ("*" * num) + " "
+#   end
+#   lines << row
+# end
+
+# # for line in lines
+# #   puts line
+# # end
+
+# lines.each { |line| puts line }
+
+# def avg(array)
+#   sum = 0
+#   length = 0
+#   for num in array
+#     sum += num
+#     length += 1
+#   end
+#   return sum.to_f / length
+# end
+
+# p avg([1, 2, 3, 4, 5, 6])
