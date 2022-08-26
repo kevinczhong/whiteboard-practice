@@ -188,3 +188,53 @@ require "faker"
 # end
 
 # p avg([1, 2, 3, 4, 5, 6])
+
+numbers = [1, 2, 4, 2]
+doubled_numbers = numbers.map { |number| number * 2 }
+# numbers.each do |number|
+#   doubled_numbers << number * 2
+# end
+p doubled_numbers
+
+items = [
+  { id: 1, body: "foo" },
+  { id: 2, body: "bar" },
+  { id: 3, body: "foobar" },
+]
+
+ids = items.map { |item| item[:id] }
+p ids
+
+fruits = [
+  { "name" => "apple", "color" => "red" },
+  { "name" => "banana", "color" => "yellow" },
+  { "name" => "grape", "color" => "purple" },
+]
+
+fruits_hash = fruits.map { |fruit| [fruit["name"], fruit["color"]] }.to_h
+p fruits_hash
+
+def reverse_a_string(string)
+  rev_string = ""
+  index = string.length - 1
+  while index >= 0
+    rev_string += string[index]
+    index -= 1
+  end
+  return rev_string
+end
+
+p reverse_a_string("edcba")
+
+def find_longest_word(phrase)
+  phrase_array = phrase.split(" ")
+  champ = phrase_array[0]
+  for word in phrase_array
+    if word.length > champ.length
+      champ = word
+    end
+  end
+  return champ
+end
+
+p find_longest_word("What is the longest word in this phrase?")
